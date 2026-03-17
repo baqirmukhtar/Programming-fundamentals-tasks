@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+char going;
+cout<<" Are your friends going?\n(press y for yes)";
+cin>>going;
+if(going=='y'){
+cout<<" you are also going!";
+}
+}

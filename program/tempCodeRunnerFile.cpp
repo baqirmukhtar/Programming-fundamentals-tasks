@@ -28,7 +28,6 @@ int main()
         cout << " \"Welcome to Azlan Mart\" \n";
         cout << "How can we help you sir/madam \n";
         cout << "--------user menu--------- " << endl;
-
         cout << "1 Admin" << endl;
         cout << "2 Customer" << endl;
         cout << "3 Exit" << endl;
@@ -50,7 +49,6 @@ int main()
             {
                 cout << "login successful \n";
                 login = true;
-                cout<<"Press enter to continue";
                 getch();
             }
             else
@@ -75,13 +73,11 @@ int main()
 
                 if (adminchoice == 1)
                 {
-                    cartcount = cartcount + 1;
                     system("cls");
-                    cin.ignore(); // To ignore the newline character left in the input buffer
                     string pname;
                     int pprice;
                     cout << "Enter product name: ";
-                    getline(cin, pname);
+                    cin >> pname;
                     cout << "Enter product price: ";
                     cin >> pprice;
 
@@ -118,9 +114,9 @@ int main()
                 {
                     system("cls");
                     int pid, newprice;
-                    cout << "Enter product ID to edit: \n";
+                    cout << "Enter product ID to edit: ";
                     cin >> pid;
-                    cout << "Enter new price: \n";
+                    cout << "Enter new price: ";
                     cin >> newprice;
 
                     for (int i = 0; i < cartcount; i++)
@@ -207,7 +203,7 @@ int main()
                     int quantity;
 
                     cout << "--------Products List--------\n";
-                    cout << "Choose from these options \n";
+                    cout << "Choose from these options ";
                     for (int i = 0; i < cartcount; i++)
                     {
                         if (productnames[i] != "")
@@ -215,7 +211,7 @@ int main()
                             cout << productids[i] << " - " << productnames[i] << " - RS " << productprices[i] << "\n";
                         }
                     }
-                    cout <<endl<< "Enter product ID to buy (0 to exit): ";
+                    cout << "Enter product ID to buy (0 to exit): ";
                     cin >> buyingchoice;
 
                     if (buyingchoice == 0)
